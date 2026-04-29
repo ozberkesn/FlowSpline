@@ -1,6 +1,7 @@
 # FlowSpline
 
-AI Agent Workforce Orchestration Platform built with .NET 10, PostgreSQL, Redis and React.
+Early stage open-source AI workforce orchestration platform.
+Building in public.
 
 ## Features
 - Agent Teams
