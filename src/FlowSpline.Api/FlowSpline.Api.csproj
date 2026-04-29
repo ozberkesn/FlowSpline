@@ -10,4 +10,10 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FlowSpline.Application\FlowSpline.Application.csproj" />
+    <ProjectReference Include="..\FlowSpline.Infrastructure\FlowSpline.Infrastructure.csproj" />
+    <ProjectReference Include="..\FlowSpline.Persistence\FlowSpline.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>

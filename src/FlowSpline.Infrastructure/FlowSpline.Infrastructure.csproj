@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FlowSpline.Application\FlowSpline.Application.csproj" />
+    <ProjectReference Include="..\FlowSpline.Domain\FlowSpline.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

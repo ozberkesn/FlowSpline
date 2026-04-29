@@ -10,4 +10,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.5" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FlowSpline.Application\FlowSpline.Application.csproj" />
+    <ProjectReference Include="..\FlowSpline.Infrastructure\FlowSpline.Infrastructure.csproj" />
+  </ItemGroup>
 </Project>
