@@ -1,6 +1,22 @@
 <Solution>
   <Folder Name="/deploy/" />
-  <Folder Name="/docs/" />
+  <Folder Name="/docs/">
+    <File Path="00-product-vision.md" />
+    <File Path="01-system-architecture.md" />
+    <File Path="02-dependency-rules.md" />
+    <File Path="03-domain-model.md" />
+    <File Path="04-engineering-standards.md" />
+    <File Path="05-dev-setup.md" />
+    <File Path="06-api-spec.md" />
+    <File Path="07-testing-strategy.md" />
+    <File Path="08-roadmap.md" />
+  </Folder>
+  <Folder Name="/docs/adr/">
+    <File Path="001-modular-monolith-first.md" />
+    <File Path="002-postgresql-over-mongo.md" />
+    <File Path="003-redis-runtime-memory.md" />
+    <File Path="004-cqrs-application-layer.md" />
+  </Folder>
   <Folder Name="/src/">
     <Project Path="src/FlowSpline.Api/FlowSpline.Api.csproj" Id="718dab6b-3b68-4563-a4d7-469285a086b8" />
     <Project Path="src/FlowSpline.Application/FlowSpline.Application.csproj" Id="5054093b-4bed-41db-8ed9-95390709ddd3" />
