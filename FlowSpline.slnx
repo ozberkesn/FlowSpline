@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/deploy/" />
+  <Folder Name="/docs/" />
+  <Folder Name="/src/">
+    <Project Path="src/FlowSpline.Api/FlowSpline.Api.csproj" Id="718dab6b-3b68-4563-a4d7-469285a086b8" />
+    <Project Path="src/FlowSpline.Application/FlowSpline.Application.csproj" Id="5054093b-4bed-41db-8ed9-95390709ddd3" />
+    <Project Path="src/FlowSpline.Domain/FlowSpline.Domain.csproj" Id="3e7d8b5e-5e6a-4ce8-b062-7ef86497eaf2" />
+    <Project Path="src/FlowSpline.Infrastructure/FlowSpline.Infrastructure.csproj" Id="6fe88793-5663-4538-a325-c7c9a04644ed" />
+    <Project Path="src/FlowSpline.Persistence/FlowSpline.Persistence.csproj" Id="9c6284a9-f157-4a73-9783-f3da6af1687a" />
+    <Project Path="src/FlowSpline.Worker/FlowSpline.Worker.csproj" Id="aa2e317b-b445-4592-9c49-3399acdf776a" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/FlowSpline.IntegrationTests/FlowSpline.IntegrationTests.csproj" Id="8a49592c-9a6b-40e3-ba72-887ec3c1d065" />
+    <Project Path="tests/FlowSpline.UnitTests/FlowSpline.UnitTests.csproj" Id="d0d610d0-da38-4fc9-9929-149f65f87795" />
+  </Folder>
+</Solution>
