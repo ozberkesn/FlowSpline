@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FlowSpline.Domain.Events
+namespace FlowSpline.Domain.AgentManagement.Events
 {
     internal class AgentCreatedEvent
     {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FlowSpline.Domain.ValueObjects
+namespace FlowSpline.Domain.AgentManagement.ValueObjects
 {
     public class ModelSettings
     {

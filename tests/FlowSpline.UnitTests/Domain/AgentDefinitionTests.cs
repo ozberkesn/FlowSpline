@@ -1,5 +1,5 @@
-﻿using FlowSpline.Domain.Entities;
-using FlowSpline.Domain.ValueObjects;
+﻿using FlowSpline.Domain.AgentManagement.Aggregates;
+using FlowSpline.Domain.AgentManagement.ValueObjects;
 
 namespace FlowSpline.UnitTests.Domain;
 
