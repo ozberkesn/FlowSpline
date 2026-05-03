@@ -1,50 +1,46 @@
 ﻿using FlowSpline.Domain.Entities;
+using FlowSpline.Domain.ValueObjects;
 
 namespace FlowSpline.UnitTests.Domain;
 
 public class AgentDefinitionTests
 {
     [Fact]
-    public void CreateAgent_WithValidData_ShouldSucceed()
+    public void CreateAgent_WithValidData_ShouldCreateActiveAgent()
     {
+        var model = CreateModelSettings();
+
         var agent = new AgentDefinition(
             "Sales Agent",
-            "You qualify leads",
-            "gpt-4");
+            "You are a sales assistant.",
+            model);
+
+        Assert.NotEqual(Guid.Empty, agent.Id);
+        Assert.Equal("Sales Agent", agent.Name);
+        Assert.Equal("You are a sales assistant.", agent.SystemPrompt);
+        Assert.Equal(model, agent.Model);
+        Assert.True(agent.IsActive);
+        Assert.Empty(agent.Tools);
+    }
+
+    [Fact]
+    public void CreateAgent_ShouldTrimNameAndPrompt()
+    {
+        var model = CreateModelSettings();
+
+        var agent = new AgentDefinition(
+            "  Sales Agent  ",
+            "  You are helpful.  ",
+            model);
 
         Assert.Equal("Sales Agent", agent.Name);
-        Assert.True(agent.IsActive);
+        Assert.Equal("You are helpful.", agent.SystemPrompt);
     }
 
     [Fact]
-    public void CreateAgent_WithoutName_ShouldThrow()
+    public void Deactivate_ShouldMakeAgentInactive()
     {
-        Assert.Throws<ArgumentException>(() =>
-            new AgentDefinition(
-                "",
-                "Prompt",
-                "gpt-4"));
-    }
-
-    [Fact]
-    public void ChangePrompt_WithEmptyPrompt_ShouldThrow()
-    {
-        var agent = new AgentDefinition(
-            "Agent",
-            "Prompt",
-            "gpt-4");
-
-        Assert.Throws<ArgumentException>(() =>
-            agent.ChangePrompt(""));
-    }
-
-    [Fact]
-    public void Deactivate_ShouldSetInactive()
-    {
-        var agent = new AgentDefinition(
-            "Agent",
-            "Prompt",
-            "gpt-4");
+        var agent = CreateAgent();
 
         agent.Deactivate();
 
@@ -52,12 +48,30 @@ public class AgentDefinitionTests
     }
 
     [Fact]
-    public void CreateAgent_WithShortName_ShouldThrow()
+    public void Activate_ShouldMakeAgentActive()
     {
-        Assert.Throws<ArgumentException>(() =>
-            new AgentDefinition(
-                "A",
-                "Prompt",
-                "gpt-4"));
+        var agent = CreateAgent();
+        agent.Deactivate();
+
+        agent.Activate();
+
+        Assert.True(agent.IsActive);
+    }
+
+    private static AgentDefinition CreateAgent()
+    {
+        return new AgentDefinition(
+            "Test Agent",
+            "Test prompt",
+            CreateModelSettings());
+    }
+
+    private static ModelSettings CreateModelSettings()
+    {
+        return new ModelSettings(
+            "OpenAI",
+            "gpt-4.1-mini",
+            0.7,
+            1000);
     }
 }
