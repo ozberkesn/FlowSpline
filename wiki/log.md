@@ -130,6 +130,23 @@ Open questions resolved:
 
 ---
 
+## [2026-05-09] implement | Scalar API Explorer eklendi
+
+API'yi tarayıcıdan keşfetmek için Scalar UI entegrasyonu yapıldı.
+
+Files modified:
+- `src/FlowSpline.Api/FlowSpline.Api.csproj` — `Scalar.AspNetCore` 2.14.11 paketi eklendi
+- `src/FlowSpline.Api/Program.cs` — `using Scalar.AspNetCore` + `app.MapScalarApiReference()` (IsDevelopment guard içinde)
+- `README.md` — API URL ve explorer adresi güncellendi (yanlış `/swagger` → `/scalar/v1`)
+- `wiki/sources/05-dev-setup.md` — API base URL, Scalar URL, OpenAPI JSON endpoint bilgileri eklendi
+
+Key decisions:
+- ASP.NET 10 built-in `app.MapOpenApi()` + Scalar tercih edildi; Swashbuckle/NSwag eklenmedi
+- Scalar yalnızca Development ortamında açık (IsDevelopment guard)
+- HTTP: `http://localhost:5275/scalar/v1` · HTTPS: `https://localhost:7197/scalar/v1`
+
+---
+
 ## [2026-05-09] implement | API Controllers — 9 endpoint, ValidationExceptionHandler
 
 Implemented `FlowSpline.Api` controllers exposing all Phase 1 endpoints.

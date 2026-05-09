@@ -103,7 +103,7 @@ dotnet ef database update --project src/FlowSpline.Persistence --startup-project
 dotnet run --project src/FlowSpline.Api
 ```
 
-API is available at `https://localhost:5001`. OpenAPI/Swagger at `/swagger`.
+API is available at `http://localhost:5275`. Interactive API explorer (Scalar) at `http://localhost:5275/scalar/v1`.
 
 ### Run Tests
 

@@ -1,6 +1,7 @@
 using FlowSpline.Api.Middleware;
 using FlowSpline.Application;
 using FlowSpline.Persistence;
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
 app.UseExceptionHandler();
