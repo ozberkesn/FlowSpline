@@ -365,3 +365,6 @@ FodyWeavers.xsd
 # Claude Code
 .claude/
 CLAUDE.md
+
+# LLM Wiki (local knowledge base, not committed)
+wiki/
